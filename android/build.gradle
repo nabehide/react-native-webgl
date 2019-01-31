@@ -119,7 +119,7 @@ task cleanRNWebGLLib(type: Exec) {
 task packageRNWebGLLibs(dependsOn: buildRNWebGLLib, type: Copy) {
   from "$buildDir/exgl/all"
   exclude '**/libjsc.so'
-  exclude '**/libgnustl_shared.so'
+  exclude '**/libc++_shared.so'
   into "$buildDir/exgl/exported"
 }
 
@@ -152,5 +152,5 @@ repositories {
 }
 
 dependencies {
-  compile "com.facebook.react:react-native:+"  // From node_modules
+  implementation "com.facebook.react:react-native:+"  // From node_modules
 }
